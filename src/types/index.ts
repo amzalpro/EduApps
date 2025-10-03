@@ -45,3 +45,45 @@ export interface SommaireItem {
   page: number;
   label: string;
 }
+
+/**
+ * Export de tous les types pour l'application de gestion scolaire
+ */
+export * from './student';
+export * from './evaluation';
+export * from './schoolLife';
+export * from './schedule';
+export * from './config';
+
+/**
+ * Types pour les modèles de lettres
+ */
+export interface LetterTemplate {
+  id: string;
+  name: string;
+  type: 'parent' | 'administration' | 'élève' | 'autre';
+  subject: string;
+  content: string;
+  variables: string[]; // Variables disponibles comme {{nom}}, {{prénom}}, etc.
+  createdAt: string;
+  updatedAt: string;
+}
+
+/**
+ * Types pour les widgets
+ */
+export interface Widget {
+  id: string;
+  type: 'jeu' | 'annuaire' | 'dictionnaire' | 'sites-favoris' | 'qr-code';
+  name: string;
+  config?: Record<string, any>;
+  enabled: boolean;
+}
+
+export interface FavoriteSite {
+  id: string;
+  name: string;
+  url: string;
+  category?: string;
+  icon?: string;
+}
