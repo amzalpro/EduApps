@@ -271,7 +271,7 @@ function App() {
       try {
         const importedData = JSON.parse(e.target?.result as string);
         setFormData(importedData);
-      } catch (error) {
+      } catch {
         alert('Erreur: Le fichier JSON est invalide ou corrompu.');
       }
     };
