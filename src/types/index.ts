@@ -45,3 +45,12 @@ export interface SommaireItem {
   page: number;
   label: string;
 }
+
+export interface UserProfile {
+  id: string;
+  username: string;
+  role: 'enseignant' | 'admin';
+  firstName: string;
+  lastName: string;
+  email: string;
+}
